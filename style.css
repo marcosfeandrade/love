@@ -1,9 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(90deg,rgba(255, 255, 255, 1) 0%, rgba(211, 213, 242, 1) 50%);
     color: #4a4a4a;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .intro {
@@ -67,12 +73,14 @@ body {
     font-size: 3em;
     color: #ff69b4;
     animation: fadeIn 1.5s ease-in;
+    padding: 0 20px;
 }
 
 .intro p {
     font-size: 1.5em;
     color: #4a4a4a;
     margin-top: 20px;
+    padding: 0 20px;
     animation: fadeIn 1.5s ease-in 0.3s;
     animation-fill-mode: both;
 }
@@ -90,10 +98,14 @@ body {
 
 .photos {
     text-align: center;
+    padding: 40px 20px;
 }
+
 .photos h2 {
     font-size: 1.5em;
     color: #4a4a4a;
+    padding: 0 20px;
+    margin-bottom: 20px;
 }
 
 .carousel {
@@ -120,6 +132,11 @@ body {
     border-radius: 15px;
     display: block;
     margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 .slick-prev, .slick-next {
@@ -164,9 +181,36 @@ body {
     content: '→';
 }
 
+@media (max-width: 768px) {
+    .slick-prev {
+        left: 10px;
+        z-index: 2;
+    }
+    
+    .slick-next {
+        right: 10px;
+        z-index: 2;
+    }
+    
+    .slick-prev:before, .slick-next:before {
+        font-size: 24px;
+    }
+}
+
 .slick-prev:hover:before, .slick-next:hover:before {
     color: #ff69b4;
     opacity: 0.8;
+}
+
+.slick-dots {
+    position: relative;
+    bottom: auto;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.slick-dots li {
+    margin: 0 5px;
 }
 
 .slick-dots li button:before {
@@ -274,19 +318,293 @@ body {
 }
 
 @media (max-width: 768px) {
+    .intro {
+        padding: 20px;
+        min-height: 100vh;
+        height: auto;
+    }
+    
+    .intro h1 {
+        font-size: 2em;
+    }
+    
+    .intro p {
+        font-size: 1.1em;
+    }
+    
+    .heart-beat {
+        font-size: 2em;
+        margin-top: 20px;
+    }
+    
+    .scroll-down-btn {
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+    }
+    
+    .scroll-down-btn span {
+        font-size: 20px;
+    }
+    
+    .photos {
+        padding: 30px 10px;
+    }
+    
+    .photos h2 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+    
+    .carousel {
+        width: 90%;
+        margin: 30px auto;
+    }
+    
+    .carousel-item img {
+        max-height: 400px;
+    }
+    
+    .slick-dots {
+        position: relative;
+        bottom: auto;
+        margin-top: 20px;
+    }
+    
+    .slick-dots li button:before {
+        font-size: 16px;
+    }
+    
+    .timeline {
+        padding: 40px 10px;
+    }
+    
+    .timeline h2 {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+    
     .timeline::before {
-        left: 30px;
+        left: 20px;
     }
     
     .timeline .event {
-        width: calc(100% - 80px);
-        margin-left: 80px !important;
+        width: calc(100% - 60px);
+        margin-left: 60px !important;
         margin-right: 0 !important;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
     
     .timeline .event::before {
-        left: -60px !important;
+        left: -50px !important;
         right: auto !important;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .timeline .event img {
+        max-height: 300px;
+    }
+    
+    .event h3 {
+        font-size: 1.1em;
+    }
+    
+    .event p {
+        font-size: 0.9em;
+    }
+    
+    .final-love-message {
+        padding: 50px 20px;
+        min-height: 40vh;
+    }
+    
+    .final-love-message h2 {
+        font-size: 2.5em;
+    }
+    
+    .final-love-message p {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro h1 {
+        font-size: 1.8em;
+    }
+    
+    .intro p {
+        font-size: 1em;
+        margin-top: 15px;
+    }
+    
+    .heart-beat {
+        font-size: 1.8em;
+        margin-top: 15px;
+    }
+    
+    .scroll-down-btn {
+        width: 35px;
+        height: 35px;
+        bottom: 15px;
+    }
+    
+    .scroll-down-btn span {
+        font-size: 18px;
+    }
+    
+    .photos {
+        padding: 20px 10px;
+    }
+    
+    .photos h2 {
+        font-size: 1.1em;
+    }
+    
+    .carousel {
+        width: 95%;
+        margin: 20px auto;
+    }
+    
+    .carousel-item img {
+        max-height: 350px;
+        border-radius: 10px;
+    }
+    
+    .slick-prev {
+        left: 5px;
+    }
+    
+    .slick-next {
+        right: 5px;
+    }
+    
+    .slick-prev:before, .slick-next:before {
+        font-size: 20px;
+    }
+    
+    .slick-dots li button:before {
+        font-size: 14px;
+    }
+    
+    .timeline {
+        padding: 30px 5px;
+    }
+    
+    .timeline h2 {
+        font-size: 1.8em;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
+    
+    .timeline::before {
+        left: 15px;
+        width: 3px;
+    }
+    
+    .timeline .event {
+        width: calc(100% - 50px);
+        margin-left: 50px !important;
+        padding: 12px;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .timeline .event::before {
+        left: -40px !important;
+        width: 14px;
+        height: 14px;
+        border: 3px solid #fff;
+    }
+    
+    .timeline .event img {
+        max-height: 250px;
+        margin-bottom: 10px;
+    }
+    
+    .event h3 {
+        font-size: 1em;
+        margin: 8px 0 6px 0;
+    }
+    
+    .event p {
+        font-size: 0.85em;
+        line-height: 1.4;
+    }
+    
+    .final-love-message {
+        padding: 40px 15px;
+        min-height: 35vh;
+    }
+    
+    .final-love-message h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+    
+    .final-love-message p {
+        font-size: 1.1em;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 320px) {
+    .intro h1 {
+        font-size: 1.5em;
+    }
+    
+    .intro p {
+        font-size: 0.9em;
+    }
+    
+    .heart-beat {
+        font-size: 1.5em;
+    }
+    
+    .photos h2 {
+        font-size: 1em;
+    }
+    
+    .carousel-item img {
+        max-height: 300px;
+    }
+    
+    .timeline h2 {
+        font-size: 1.5em;
+    }
+    
+    .timeline .event {
+        width: calc(100% - 45px);
+        margin-left: 45px !important;
+        padding: 10px;
+    }
+    
+    .timeline .event::before {
+        left: -35px !important;
+        width: 12px;
+        height: 12px;
+    }
+    
+    .timeline .event img {
+        max-height: 200px;
+    }
+    
+    .event h3 {
+        font-size: 0.95em;
+    }
+    
+    .event p {
+        font-size: 0.8em;
+    }
+    
+    .final-love-message h2 {
+        font-size: 1.8em;
+    }
+    
+    .final-love-message p {
+        font-size: 1em;
     }
 }
 
